@@ -1,7 +1,7 @@
 {
-    "id": "nodebb-theme-persona",
-    "name": "Persona",
-    "description": "The default theme for NodeBB. Uses a standard approach to forum design.",
-    "url": "https://github.com/psychobunny/nodebb-theme-persona",
+    "id": "nodebb-theme-mathforu",
+    "name": "Mathforu",
+    "description": "The theme used by forum.mathforu.com, based on Persona.",
+    "url": "https://github.com/zipang/nodebb-theme-mathforu",
     "screenshot": "screenshot.png"
 }

@@ -1,14 +1,14 @@
 {
-  "name": "nodebb-theme-persona",
-  "version": "7.2.4",
+  "name": "nodebb-theme-mathforu",
+  "version": "1.0.0",
   "nbbpm": {
     "compatibility": "^1.7.0"
   },
-  "description": "Persona theme for NodeBB",
+  "description": "MathforU theme for NodeBB",
   "main": "theme.less",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psychobunny/nodebb-theme-persona"
+    "url": "https://github.com/zipang/nodebb-theme-mathforu"
   },
   "keywords": [
     "nodebb",
@@ -36,7 +36,7 @@
   ],
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-theme-persona/issues"
+    "url": "https://github.com/zipang/nodebb-theme-mathforu/issues"
   },
   "dependencies": {
     "striptags": "^3.1.0",
