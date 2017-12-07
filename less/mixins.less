@@ -1,5 +1,11 @@
+// main: ../theme.less
 .no-select {
-	.user-select(none);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .pointer {
@@ -46,4 +52,37 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+.fix-lists {
+	ul {
+		> li {
+			list-style-type: disc;
+
+			ul > li {
+				list-style-type: circle;
+
+				ul > li {
+					list-style-type: square;
+				}
+			}
+		}
+	}
+
+	> ul, > ol {
+		margin-bottom: 10px;
+	}
+}
+
+.user-icon-style(@size: 32px, @font-size: 1.5rem, @border-radius: inherit) {
+	border-radius: @border-radius;
+	width: @size;
+	height: @size;
+	line-height: @size;
+	font-size: @font-size;
+}
+
+.box-shadow(@shadow) {
+	-webkit-box-shadow: @shadow;
+	box-shadow: @shadow;
 }
