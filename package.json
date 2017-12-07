@@ -1,6 +1,6 @@
 {
   "name": "nodebb-theme-mathforu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "nbbpm": {
     "compatibility": "^1.7.0"
   },
@@ -39,7 +39,7 @@
     "url": "https://github.com/zipang/nodebb-theme-mathforu/issues"
   },
   "dependencies": {
-    "striptags": "^3.1.0",
-    "pulling": "^1.1.0"
+    "pulling": "^1.1.0",
+    "striptags": "^3.1.0"
   }
 }
