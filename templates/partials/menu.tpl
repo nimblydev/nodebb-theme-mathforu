@@ -10,7 +10,7 @@
 
 				<!-- IF brand:logo -->
 				<a href="<!-- IF brand:logo:url -->{brand:logo:url}<!-- ELSE -->{relative_path}/<!-- ENDIF brand:logo:url -->">
-					<img alt="{brand:logo:alt}" class="{brand:logo:display} forum-logo" src="{brand:logo}" />
+					<img alt="" title="{brand:logo:alt}" class="{brand:logo:display} forum-logo" src="{brand:logo}" />
 				</a>
 				<!-- ENDIF brand:logo -->
 				<!-- IF config.showSiteTitle -->
@@ -71,7 +71,7 @@
 							<img component="header/userpicture" src="{user.picture}" alt="{user.username}"/>
 							<!-- ELSE -->
 							<span component="header/usericon" class="user-icon" style="background-color: {user.icon:bgColor}; display: block;">{user.icon:text}</span>
-							<!-- ENDIF user.picture --> 
+							<!-- ENDIF user.picture -->
 							<span id="user-header-name" class="visible-xs-inline">{user.username}</span>
 						</label>
 						<input type="checkbox" class="hidden" id="user-control-list-check" aria-hidden="true">
