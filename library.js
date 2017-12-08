@@ -20,7 +20,7 @@ library.addAdminNavigation = function(header, callback) {
 	header.plugins.push({
 		route: '/plugins/mathforu',
 		icon: 'fa-paint-brush',
-		name: 'mathforu Theme'
+		name: 'Theme Mathforu'
 	});
 
 	callback(null, header);
