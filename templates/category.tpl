@@ -28,7 +28,7 @@
 
 		<hr class="hidden-xs" />
 
-		<h1 class="category-title">{name}</h1>
+		<h1 class="category-title" style="color: {bgColor}">{name}</h1>
 
 		<!-- IF !topics.length -->
 		<hr class="visible-xs" />

@@ -14,8 +14,8 @@
 				</a>
 				<!-- ENDIF brand:logo -->
 				<!-- IF config.showSiteTitle -->
-				<a href="<!-- IF title:url -->{title:url}<!-- ELSE -->{relative_path}/<!-- ENDIF title:url -->">
-					<h1 class="navbar-brand forum-title">{config.siteTitle}</h1>
+				<a href="<!-- IF title:url -->{title:url}<!-- ELSE -->{relative_path}/<!-- ENDIF title:url -->" class="navbar-brand forum-title">
+					{config.siteTitle}
 				</a>
 				<!-- ENDIF config.showSiteTitle -->
 
