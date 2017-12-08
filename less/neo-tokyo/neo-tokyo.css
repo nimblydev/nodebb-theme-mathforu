@@ -4897,7 +4897,7 @@ a.label:focus {
   padding: 3px 7px;
   font-size: 15px;
   font-weight: bold;
-  color: : #fff;
+  color: #fff;
   line-height: 1;
   vertical-align: middle;
   white-space: nowrap;
@@ -5967,7 +5967,7 @@ button.close {
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
-  line-break: auto;
+  word-break: auto;
   line-height: 1.5;
   text-align: left;
   text-align: start;
@@ -6085,7 +6085,7 @@ button.close {
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
-  line-break: auto;
+  word-break: auto;
   line-height: 1.5;
   text-align: left;
   text-align: start;
