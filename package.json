@@ -1,6 +1,6 @@
 {
   "name": "nodebb-theme-mathforu",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "nbbpm": {
     "compatibility": "^1.7.0"
   },
