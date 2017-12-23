@@ -10,14 +10,23 @@
 
 				<!-- IF brand:logo -->
 				<a href="<!-- IF brand:logo:url -->{brand:logo:url}<!-- ELSE -->{relative_path}/<!-- ENDIF brand:logo:url -->">
-					<img alt="" title="{brand:logo:alt}" class="{brand:logo:display} forum-logo" src="{brand:logo}" />
+					<img alt="{brand:logo:alt}" title="{brand:logo:alt}"
+						class="{brand:logo:display} forum-logo" src="{brand:logo}" />
 				</a>
 				<!-- ENDIF brand:logo -->
-				<!-- IF config.showSiteTitle -->
-				<a href="<!-- IF title:url -->{title:url}<!-- ELSE -->{relative_path}/<!-- ENDIF title:url -->" class="navbar-brand forum-title">
-					{config.siteTitle}
-				</a>
-				<!-- ENDIF config.showSiteTitle -->
+
+				<div class="btn-group">
+					<a class="btn btn-primary dropdown-toggle" href="{brand:logo:url}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Mathforu, le forum
+					</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="https://www.mathforu.com">Les cours</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="https://www.mathforu.com/parents">Parents</a>
+						<a class="dropdown-item" href="https://www.mathforu.com/professeurs">Professeurs</a>
+						<a class="dropdown-item" href="https://www.mathforu.com/etudiants">Etudiants</a>
+					</div>
+				</div>
 
 				<div component="navbar/title" class="visible-xs hidden">
 					<span></span>
