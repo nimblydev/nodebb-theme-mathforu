@@ -16,8 +16,9 @@
 				<!-- ENDIF brand:logo -->
 
 				<div class="btn-group">
-					<a class="btn btn-primary dropdown-toggle" href="{brand:logo:url}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Mathforu, le forum
+					<a id="dropdownMenuLink" class="btn btn-primary dropdown-toggle" href="{brand:logo:url}"
+						role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Mathforu
 					</a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="https://www.mathforu.com">Les cours</a>
