@@ -16,11 +16,14 @@
 				<!-- ENDIF brand:logo -->
 
 				<div class="btn-group">
-					<a id="dropdownMenuLink" class="btn btn-primary dropdown-toggle" href="{brand:logo:url}"
-						role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<button id="dropdownMenuLink" class="dropdown-toggle"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Mathforu
-					</a>
+						<i class="fa fa-lg fa-bars"></i>
+					</button>
 					<div class="dropdown-menu">
+						<a class="dropdown-item" href="https://forum.mathforu.com">Le forum</a>
+						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="https://www.mathforu.com">Les cours</a>
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="https://www.mathforu.com/parents">Parents</a>
