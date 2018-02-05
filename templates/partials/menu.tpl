@@ -18,8 +18,8 @@
 				<div class="btn-group">
 					<button id="dropdownMenuButton" class="dropdown-toggle"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Mathforu
 						<i class="fa fa-lg fa-bars"></i>
+						Mathforu
 					</button>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="https://forum.mathforu.com">Le forum</a>
