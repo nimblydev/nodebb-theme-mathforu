@@ -16,7 +16,7 @@
 				<!-- ENDIF brand:logo -->
 
 				<div class="btn-group">
-					<button id="dropdownMenuLink" class="dropdown-toggle"
+					<button id="dropdownMenuButton" class="dropdown-toggle"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Mathforu
 						<i class="fa fa-lg fa-bars"></i>
