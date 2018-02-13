@@ -26,7 +26,7 @@
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="https://www.mathforu.com">Les cours</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="https://www.mathforu.com/parents">Parents</a>
+						<a class="dropdown-item" href="https://open.mathforu.com">Parents</a>
 						<a class="dropdown-item" href="https://www.mathforu.com/professeurs">Professeurs</a>
 						<a class="dropdown-item" href="https://www.mathforu.com/etudiants">Etudiants</a>
 					</div>
