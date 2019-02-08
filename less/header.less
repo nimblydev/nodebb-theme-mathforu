@@ -1,3 +1,8 @@
+@import './bootstrap/variables.less';
+@import './mixins.less';
+@import './bootstrap/mixins/background-variant.less';
+
+
 .header, .slideout-menu {
 	.notification-list {
 		overflow-x: hidden;
@@ -59,7 +64,7 @@
 
 				&:hover {
 					color: @gray-dark;
-					.pointer;
+					cursor: pointer;
 
 					&:after {
 						content: "\f111";
@@ -73,7 +78,7 @@
 		.notification-list;
 
 		> li {
-			.pointer;
+			cursor: pointer;
 			width: 300px;
 			padding-bottom: 1rem;
 			margin: 0;
@@ -368,7 +373,6 @@
 		transition: max-width 0.2s ease 0s;
 		max-height: 42px;
 		float: right;
-		display: inline-block !important;
 		visibility: visible !important;
 
 		&.hidden {
