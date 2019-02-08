@@ -17,17 +17,19 @@
 			<span class="topic-title" component="topic/title">{title}</span>
 		</h1>
 
-		<div component="topic/deleted/message" class="alert alert-warning<!-- IF !deleted --> hidden<!-- ENDIF !deleted --> clearfix">
-			<span class="pull-left">[[topic:deleted_message]]</span>
+		<!-- IF merger -->
+		<div component="topic/merged/message" class="alert alert-warning clearfix">
+			<span class="pull-left">[[topic:merged_message, {mergeIntoTid}, {merger.mergedIntoTitle}]]</span>
 			<span class="pull-right">
-				<!-- IF deleter -->
-				<a href="{config.relative_path}/user/{deleter.userslug}">
-					<strong>{deleter.username}</strong>
+				<a href="{config.relative_path}/user/{merger.userslug}">
+					<strong>{merger.username}</strong>
 				</a>
-				<small class="timeago" title="{deletedTimestampISO}"></small>
-				<!-- ENDIF deleter -->
+				<small class="timeago" title="{mergedTimestampISO}"></small>
 			</span>
 		</div>
+		<!-- ENDIF merger -->
+
+		<!-- IMPORT partials/topic/deleted-message.tpl -->
 
 		<hr class="visible-xs" />
 
@@ -59,6 +61,10 @@
 		<!-- IMPORT partials/paginator.tpl -->
 		<!-- ENDIF config.usePagination -->
 
+		<div class="navigator-thumb text-center hidden">
+			<strong class="text"></strong><br/>
+			<span class="time"></span>
+		</div>
 		<div class="visible-xs visible-sm pagination-block text-center">
 			<div class="progress-bar"></div>
 			<div class="wrapper">

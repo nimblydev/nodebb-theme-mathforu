@@ -1,13 +1,17 @@
 @import "../keyframes";
 
+.modal-unfocused {
+	z-index: @zindex-modal - 5 !important;
+}
+
 .taskbar {
 	display: none;
-	z-index: 10001;
+	z-index: @zindex-popover;
 	left: auto;
 
 	// Bootswatch fix
 	&.navbar-fixed-bottom {
-		z-index: 10001;
+		z-index: @zindex-popover;
 		left: auto;
 	}
 
@@ -92,7 +96,7 @@
 					.user-icon-style(50px, 2.4rem, 50%) !important;
 					padding: 0;
 					color: white;
-					background: none;
+					background: @brand-primary;
 					background-size: cover;
 
 					i {
@@ -134,12 +138,6 @@
 					}
 				}
 			}
-		}
-	}
-
-	@media (max-width: @screen-sm) {
-		.nav.navbar-nav {
-			margin: 0;
 		}
 	}
 }

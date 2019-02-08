@@ -1,17 +1,17 @@
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle pull-left" id="mobile-menu">
-					<span component="notifications/icon" class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
-					<i class="fa fa-lg fa-bars"></i>
+					<span component="notifications/icon" class="notification-icon fa fa-fw fa-bell-o unread-count" data-content="{unreadCount.notification}"></span>
+					<i class="fa fa-lg fa-fw fa-bars"></i>
 				</button>
 				<button type="button" class="navbar-toggle hidden" id="mobile-chats">
-					<span component="chat/icon" class="notification-icon fa fa-fw fa-comments" data-content="0"></span>
+					<span component="chat/icon" class="notification-icon fa fa-fw fa-comments unread-count" data-content="{unreadCount.chat}"></span>
 					<i class="fa fa-lg fa-comment-o"></i>
 				</button>
 
 				<!-- IF brand:logo -->
 				<a href="<!-- IF brand:logo:url -->{brand:logo:url}<!-- ELSE -->{relative_path}/<!-- ENDIF brand:logo:url -->">
 					<img alt="{brand:logo:alt}" title="{brand:logo:alt}"
-						class="{brand:logo:display} forum-logo" src="{brand:logo}" />
+						class="{brand:logo:display} forum-logo" src="{brand:logo}?{config.cache-buster}" />
 				</a>
 				<!-- ENDIF brand:logo -->
 
@@ -44,12 +44,12 @@
 				<ul id="logged-in-menu" class="nav navbar-nav navbar-right">
 					<li class="notifications dropdown text-center hidden-xs" component="notifications">
 						<a href="{relative_path}/notifications" title="[[global:header.notifications]]" class="dropdown-toggle" data-toggle="dropdown" id="notif_dropdown" data-ajaxify="false" role="button">
-							<i component="notifications/icon" class="fa fa-fw fa-bell-o" data-content="0"></i>
+							<i component="notifications/icon" class="fa fa-fw fa-bell-o unread-count" data-content="{unreadCount.notification}"></i>
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="notif_dropdown">
 							<li>
 								<ul component="notifications/list" class="notification-list">
-									<li>
+									<li class="loading-text">
 										<a href="#"><i class="fa fa-refresh fa-spin"></i> [[global:notifications.loading]]</a>
 									</li>
 								</ul>
@@ -62,13 +62,13 @@
 					<!-- IF !config.disableChat -->
 					<li class="chats dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="{relative_path}/user/{user.userslug}/chats" title="[[global:header.chats]]" id="chat_dropdown" component="chat/dropdown" data-ajaxify="false" role="button">
-							<i component="chat/icon" class="fa fa-comment-o fa-fw"></i> <span class="visible-xs-inline">[[global:header.chats]]</span>
+							<i component="chat/icon" class="fa fa-comment-o fa-fw unread-count" data-content="{unreadCount.chat}"></i> <span class="visible-xs-inline">[[global:header.chats]]</span>
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="chat_dropdown">
 							<li>
 								<ul component="chat/list" class="chat-list chats-list">
-									<li>
-										<i class="fa fa-refresh fa-spin"></i> [[global:chats.loading]]
+									<li class="loading-text">
+										<a href="#"><i class="fa fa-refresh fa-spin"></i> [[global:chats.loading]]</a>
 									</li>
 								</ul>
 							</li>
@@ -97,22 +97,22 @@
 							<li role="presentation" class="divider"></li>
 							<li>
 								<a href="#" class="user-status" data-status="online">
-									<i class="fa fa-fw fa-circle status online"></i><span> [[global:online]]</span>
+									<i class="fa fa-fw fa-circle status online"></i><span <!-- IF user.online -->class="bold"<!-- ENDIF user.online -->> [[global:online]]</span>
 								</a>
 							</li>
 							<li>
 								<a href="#" class="user-status" data-status="away">
-									<i class="fa fa-fw fa-circle status away"></i><span> [[global:away]]</span>
+									<i class="fa fa-fw fa-circle status away"></i><span <!-- IF user.away -->class="bold"<!-- ENDIF user.away -->> [[global:away]]</span>
 								</a>
 							</li>
 							<li>
 								<a href="#" class="user-status" data-status="dnd">
-									<i class="fa fa-fw fa-circle status dnd"></i><span> [[global:dnd]]</span>
+									<i class="fa fa-fw fa-circle status dnd"></i><span <!-- IF user.dnd -->class="bold"<!-- ENDIF user.dnd -->> [[global:dnd]]</span>
 								</a>
 							</li>
 							<li>
 								<a href="#" class="user-status" data-status="offline">
-									<i class="fa fa-fw fa-circle status offline"></i><span> [[global:invisible]]</span>
+									<i class="fa fa-fw fa-circle status offline"></i><span <!-- IF user.offline -->class="bold"<!-- ENDIF user.offline -->> [[global:invisible]]</span>
 								</a>
 							</li>
 							<li role="presentation" class="divider"></li>
@@ -139,13 +139,11 @@
 									<i class="fa fa-fw fa-list-alt"></i> <span>[[pages:post-queue]]</span>
 								</a>
 							</li>
-							<!-- IF isAdmin -->
 							<li>
 								<a href="{relative_path}/ip-blacklist">
 									<i class="fa fa-fw fa-ban"></i> <span>[[pages:ip-blacklist]]</span>
 								</a>
 							</li>
-							<!-- ENDIF isAdmin -->
 							<!-- ENDIF showModMenu -->
 							<li role="presentation" class="divider"></li>
 							<li component="user/logout">
@@ -166,14 +164,14 @@
 					<!-- IF allowRegistration -->
 					<li>
 						<a href="{relative_path}/register">
-							<i class="fa fa-pencil visible-xs-inline"></i>
+							<i class="fa fa-pencil fa-fw hidden-sm hidden-md hidden-lg"></i>
 							<span>[[global:register]]</span>
 						</a>
 					</li>
 					<!-- ENDIF allowRegistration -->
 					<li>
 						<a href="{relative_path}/login">
-							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<i class="fa fa-sign-in fa-fw hidden-sm hidden-md hidden-lg"></i>
 							<span>[[global:login]]</span>
 						</a>
 					</li>
@@ -239,7 +237,7 @@
 					<li class="{navigation.class}">
 						<a class="navigation-link" href="{navigation.route}" title="{navigation.title}" <!-- IF navigation.id -->id="{navigation.id}"<!-- ENDIF navigation.id --><!-- IF navigation.properties.targetBlank --> target="_blank"<!-- ENDIF navigation.properties.targetBlank -->>
 							<!-- IF navigation.iconClass -->
-							<i class="fa fa-fw {navigation.iconClass}"></i>
+							<i class="fa fa-fw {navigation.iconClass}" data-content="{navigation.content}"></i>
 							<!-- ENDIF navigation.iconClass -->
 
 							<!-- IF navigation.text -->
@@ -255,7 +253,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li>
 						<a href="{relative_path}/login">
-							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<i class="fa fa-sign-in fa-fw hidden-sm hidden-md hidden-lg"></i>
 							<span>[[global:login]]</span>
 						</a>
 					</li>

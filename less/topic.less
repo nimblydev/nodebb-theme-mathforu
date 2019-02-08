@@ -238,8 +238,6 @@
 	}
 
 	.post-tools {
-		text-transform: lowercase;
-
 		a {
 			padding-right: 10px;
 			.pointer;
@@ -299,7 +297,7 @@
 		border-top: 1px dashed #dedede;
 		padding: 1px;
 		padding-top: 5px;
-		display: inline-block;
+		display: block;
 		font-style: italic;
 		margin-left: 61px;
 		max-width: 100%;
@@ -484,6 +482,17 @@
 		}
 	}
 
+	.navigator-thumb {
+		position: fixed;
+		background-color: @gray-lighter;
+		bottom: 60px;
+		left: 0px;
+		padding: 10px;
+		border-radius: 5px;
+		white-space: nowrap;
+		z-index: 100;
+	}
+
 	.pagination-block {
 		position: fixed;
 		width: 100%;
@@ -506,6 +515,7 @@
 			display:block;
 			z-index: -1;
 			position: absolute;
+			transition: width 50ms ease-in;
 		}
 	}
 }

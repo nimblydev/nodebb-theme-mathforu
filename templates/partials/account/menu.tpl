@@ -3,6 +3,7 @@
 		<i class="fa fa-ellipsis-v"></i>
 	</button>
 	<ul class="dropdown-menu dropdown-menu-right">
+		<!-- IF loggedIn -->
 		<!-- IF !isSelf -->
 		<!-- IF !banned -->
 		<!-- IF !config.disableChat -->
@@ -16,16 +17,19 @@
 		<li>
 			<a component="account/flag" href="#">[[user:flag-profile]]</a>
 		</li>
+		<li>
+			<a component="account/block" href="#"><!-- IF !../isBlocked -->[[user:block_user]]<!-- ELSE -->[[user:unblock_user]]<!-- END --></a>
+		</li>
 		<li class="divider"></li>
 		<!-- ENDIF !banned -->
 		<!-- ENDIF !isSelf -->
+		<!-- ENDIF loggedIn -->
 		<li>
 			<a href="{config.relative_path}/user/{userslug}" class="inline-block" id="profile">[[user:profile]]</a>
 		</li>
 		<!-- IF showHidden -->
-		<li><a href="{config.relative_path}/user/{userslug}/settings">[[user:settings]]</a></li>
 		<li><a href="{config.relative_path}/user/{userslug}/edit">[[user:edit]]</a></li>
-		<li><a href="{config.relative_path}/user/{userslug}/info">[[user:account_info]] <i class="fa fa-lock"></i></a></li>
+		<li><a href="{config.relative_path}/user/{userslug}/settings">[[user:settings]]</a></li>
 		<!-- ENDIF showHidden -->
 
 		<!-- IF !isSelf -->
@@ -47,6 +51,9 @@
 		<li class="divider"></li>
 		<li><a href="{config.relative_path}/user/{userslug}/following">[[user:following]]</a></li>
 		<li><a href="{config.relative_path}/user/{userslug}/followers">[[user:followers]]</a></li>
+		<!-- IF showHidden -->
+		<li><a href="{config.relative_path}/user/{userslug}/blocks">[[user:blocks]]</a></li>
+		<!-- ENDIF showHidden -->
 		<li class="divider"></li>
 		<li><a href="{config.relative_path}/user/{userslug}/topics">[[global:topics]]</a></li>
 		<li><a href="{config.relative_path}/user/{userslug}/posts">[[global:posts]]</a></li>
@@ -56,6 +63,7 @@
 		<li><a href="{config.relative_path}/user/{userslug}/groups">[[global:header.groups]]</a></li>
 
 		<!-- IF showHidden -->
+		<li><a href="{config.relative_path}/user/{userslug}/categories">[[user:watched_categories]]</a></li>
 		<li><a href="{config.relative_path}/user/{userslug}/bookmarks">[[user:bookmarks]]</a></li>
 		<li><a href="{config.relative_path}/user/{userslug}/watched">[[user:watched]]</a></li>
 		<li><a href="{config.relative_path}/user/{userslug}/ignored">[[user:ignored]]</a></li>
@@ -65,13 +73,14 @@
 		<li><a href="{config.relative_path}/user/{userslug}/downvoted">[[global:downvoted]]</a></li>
 		<!-- ENDIF !downvote:disabled -->
 		<!-- ENDIF !reputation:disabled -->
+		<li><a href="{config.relative_path}/user/{userslug}/uploads">[[global:uploads]]</a></li>
 		<!-- ENDIF showHidden -->
 
 		<!-- BEGIN profile_links -->
 		<!-- IF @first -->
 		<li class="divider"></li>
 		<!-- ENDIF @first -->
-		<li id="{profile_links.id}" class="plugin-link <!-- IF profile_links.public -->public<!-- ELSE -->private<!-- ENDIF profile_links.public -->"><a href="{config.relative_path}/user/{userslug}/{profile_links.route}"><i class="fa fa-fw {profile_links.icon}"></i> {profile_links.name}</a></li>
+		<li id="{profile_links.id}" class="plugin-link <!-- IF profile_links.public -->public<!-- ELSE -->private<!-- ENDIF profile_links.public -->"><a href="{config.relative_path}/user/{userslug}/{profile_links.route}"><!-- IF ../icon --><i class="fa fa-fw {profile_links.icon}"></i> <!-- END -->{profile_links.name}</a></li>
 		<!-- END profile_links -->
 	</ul>
 </div>

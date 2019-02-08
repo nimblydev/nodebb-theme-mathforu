@@ -14,7 +14,9 @@
 						</div>
 					</div>
 					<ul class="list-group">
+						<!-- IF allowProfilePicture -->
 						<a id="changePictureBtn" href="#" class="list-group-item">[[user:change_picture]]</a>
+						<!-- ENDIF allowProfilePicture -->
 						<!-- IF !username:disableEdit -->
 						<a href="{config.relative_path}/user/{userslug}/edit/username" class="list-group-item">[[user:change_username]]</a>
 						<!-- ENDIF !username:disableEdit -->
@@ -56,13 +58,14 @@
 								<input class="form-control" type="text" id="inputFullname" placeholder="[[user:fullname]]" value="{fullname}">
 							</div>
 						</div>
-
+						<!-- IF allowWebsite -->
 						<div class="control-group">
 							<label class="control-label" for="inputWebsite">[[user:website]]</label>
 							<div class="controls">
 								<input class="form-control" type="text" id="inputWebsite" placeholder="http://..." value="{website}">
 							</div>
 						</div>
+						<!-- ENDIF allowWebsite -->
 
 						<div class="control-group">
 							<label class="control-label" for="inputLocation">[[user:location]]</label>
@@ -81,7 +84,8 @@
 						<div class="control-group">
 							<label class="control-label" for="grouptitle">[[user:grouptitle]]</label>
 							<div class="controls">
-								<select class="form-control" id="groupTitle" data-property="groupTitle">
+
+								<select class="form-control" id="groupTitle" data-property="groupTitle" <!-- IF allowMultipleBadges --> multiple<!-- ENDIF allowMultipleBadges -->>
 									<option value="">[[user:no-group-title]]</option>
 									<!-- BEGIN groups -->
 									<!-- IF groups.userTitleEnabled -->
@@ -92,12 +96,16 @@
 							</div>
 						</div>
 
+						<!-- IF allowAboutMe -->
 						<div class="control-group">
 							<label class="control-label" for="inputAboutMe">[[user:aboutme]]</label> <small><label id="aboutMeCharCountLeft"></label></small>
 							<div class="controls">
 								<textarea class="form-control" id="inputAboutMe" rows="5">{aboutme}</textarea>
 							</div>
 						</div>
+						<!-- ENDIF allowAboutMe -->
+
+						<!-- IF allowSignature -->
 						<!-- IF !disableSignatures -->
 						<div class="control-group">
 							<label class="control-label" for="inputSignature">[[user:signature]]</label> <small><label id="signatureCharCountLeft"></label></small>
@@ -106,6 +114,7 @@
 							</div>
 						</div>
 						<!-- ENDIF !disableSignatures -->
+						<!-- ENDIF allowSignature -->
 
 						<input type="hidden" id="inputUID" value="{uid}"><br />
 
