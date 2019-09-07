@@ -1,8 +1,9 @@
 <!-- IMPORT partials/breadcrumbs.tpl -->
-<div widget-area="header">
-	<!-- BEGIN widgets.header -->
+
+<div data-widget-area="header">
+	{{{each widgets.header}}}
 	{{widgets.header.html}}
-	<!-- END widgets.header -->
+	{{{end}}}
 </div>
 <div class="users">
 	<div class="row">
@@ -34,7 +35,7 @@
 		<!-- IMPORT partials/users_list.tpl -->
 		<!-- IF anonymousUserCount -->
 		<li class="users-box anon-user">
-			<div class="user-icon">G</div>
+			<div class="avatar avatar-lg avatar-rounded">G</div>
 			<br/>
 			<div class="user-info">
 				<span id="online_anon_count">{anonymousUserCount}</span>

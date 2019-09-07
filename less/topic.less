@@ -66,7 +66,6 @@
 			margin-top: 15px
 		}
 
-
 		.icon {
 			position: relative;
 			border-radius: 50%;
@@ -87,15 +86,20 @@
 				}
 			}
 
-			img, .user-icon {
+			.avatar {
 				margin-right: 15px;
-				.user-icon-style(46px, 2.4rem, 50%);
 			}
 		}
 
 		.status {
 			vertical-align: 0%;
 		}
+	}
+
+	.login-required {
+		display: inline-block;
+		padding: 0 0.5em;
+		border: 1px dashed @gray-light;
 	}
 
 	.bookmarked {
@@ -122,9 +126,9 @@
 	[component="post/upvote"], [component="post/downvote"] {
 		color: @gray-light;
 
-        	&:focus {
-            		text-decoration: none;
-        	}
+		&:focus {
+				text-decoration: none;
+		}
 	}
 
 	[component="post/upvote"].upvoted, [component="post/downvote"].downvoted {
@@ -350,9 +354,8 @@
 				}
 			}
 
-			img, .user-icon {
+			.avatar {
 				margin-right: 15px;
-				.user-icon-style(46px, 2.4rem, 50%);
 			}
 		}
 
@@ -569,18 +572,18 @@
 
 [component="post"] {
 
-	[component="user/picture"], [component="user/status"] {
+	>.post-header [component="user/picture"], >.post-header [component="user/status"] {
 		opacity: 1;
 	}
 
-	.icon:before {
+	>.post-header .icon:before {
 		opacity: 0;
 	}
 
 	&.bg-success {
 		background-color: initial;
 
-		.icon:before {
+		>.post-header .icon:before {
 			border: 1px solid #5cb85c;
     		color: #5cb85c;
     		-webkit-transition: .2s ease-in-out all;
@@ -594,7 +597,7 @@
 		    font: normal normal normal 14px/1 FontAwesome;
 		}
 
-		[component="user/picture"], [component="user/status"] {
+		>.post-header [component="user/picture"], >.post-header [component="user/status"] {
 			opacity: 0;
 		}
 	}

@@ -44,9 +44,9 @@
 								<div class="col-md-6">
 									<label>[[search:in-categories]]</label>
 									<select multiple class="form-control" id="posted-in-categories" size="{categoriesCount}">
-										<!-- BEGIN categories -->
+										{{{each categories}}}
 										<option value="{categories.value}">{categories.text}</option>
-										<!-- END categories -->
+										{{{end}}}
 									</select>
 									<input type="checkbox" id="search-children"> [[search:search-child-categories]]
 								</div>
@@ -172,7 +172,7 @@
 			<!-- ENDIF search_query -->
 			<!-- ENDIF matchCount -->
 
-			<!-- BEGIN posts -->
+			{{{each posts}}}
 			<div class="topic-row panel panel-default clearfix">
 				<div class="panel-body">
 
@@ -188,19 +188,13 @@
 
 					<small>
 						<span class="pull-right post-preview-footer">
-							<a href="{config.relative_path}/user/{posts.user.userslug}">
-								<!-- IF posts.user.picture -->
-								<img class="user-img" title="{posts.user.username}" src="{posts.user.picture}"/>
-								<!-- ELSE -->
-								<div class="user-icon user-img" title="{posts.user.username}" style="background-color: {posts.user.icon:bgColor};">{posts.user.icon:text}</div>
-								<!-- ENDIF posts.user.picture -->
-							</a>
+							<a href="{config.relative_path}/user/{posts.user.userslug}">{buildAvatar(posts.user, "sm", true)}</a>
 							<a href="{config.relative_path}/category/{posts.category.slug}">[[global:posted_in, {posts.category.name}]] <i class="fa {posts.category.icon}"></i> <span class="timeago" title="{posts.timestampISO}"></span></a>
 						</span>
 					</small>
 				</div>
 			</div>
-			<!-- END posts -->
+			{{{end}}}
 
 			<!-- IF users.length -->
 			<ul id="users-container" class="users-container">
