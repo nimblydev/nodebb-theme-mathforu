@@ -78,11 +78,18 @@
 					</li>
 					<!-- ENDIF !config.disableChat -->
 
-					<li id="user_label" class="dropdown">
-						<label for="user-control-list-check" class="dropdown-toggle" data-toggle="dropdown" id="user_dropdown" title="[[global:header.profile]]" role="button">
-							{buildAvatar(user, "md", true)}
+					<li id="user_label coin" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" title="[[global:header.profile]]" id="user_dropdown" component="chat/dropdown" data-ajaxify="false" role="button">
+							<i component="notifications/icon" class="fa fa-fw fa-user-o"></i>
 							<span id="user-header-name" class="visible-xs-inline">{user.username}</span>
-						</label>
+						</a>
+						<!--<label for="user-control-list-check" class="dropdown-toggle" data-toggle="dropdown" id="user_dropdown"
+						title="[[global:header.profile]]" role="button">
+							{buildAvatar(user, "md", true)}
+							<i component="notifications/icon" class="fa fa-fw fa-user-o"></i>
+
+							<span id="user-header-name" class="visible-xs-inline">{user.username}</span>
+						</label>-->
 						<input type="checkbox" class="hidden" id="user-control-list-check" aria-hidden="true">
 						<ul id="user-control-list" component="header/usercontrol" class="dropdown-menu" aria-labelledby="user_dropdown">
 							<li>
