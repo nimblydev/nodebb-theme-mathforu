@@ -3,8 +3,8 @@
 	<!-- IF @first -->
 	<div component="category/posts">
 		<p>
-			<a href="{config.relative_path}/user/{../user.userslug}">{buildAvatar(posts.user, "sm", true)}</a>
-			<a class="permalink" href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->">
+			<a rel="nofollow" href="{config.relative_path}/user/{../user.userslug}">{buildAvatar(posts.user, "sm", true)}</a>
+			<a rel="nofollow" class="permalink" href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->">
 				<small class="timeago" title="{../timestampISO}"></small>
 			</a>
 		</p>

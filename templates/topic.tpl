@@ -21,7 +21,7 @@
 		<div component="topic/merged/message" class="alert alert-warning clearfix">
 			<span class="pull-left">[[topic:merged_message, {mergeIntoTid}, {merger.mergedIntoTitle}]]</span>
 			<span class="pull-right">
-				<a href="{config.relative_path}/user/{merger.userslug}">
+				<a rel="nofollow" href="{config.relative_path}/user/{merger.userslug}">
 					<strong>{merger.username}</strong>
 				</a>
 				<small class="timeago" title="{mergedTimestampISO}"></small>
@@ -83,9 +83,11 @@
 	</div>
 </div>
 
+
 <div data-widget-area="footer">
 	{{{each widgets.footer}}}
 	{{widgets.footer.html}}
+	<separator></separator>
 	{{{end}}}
 </div>
 

@@ -7,8 +7,13 @@
 		{ "hook": "filter:config.get", "method": "getThemeConfig" },
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
-		{ "hook": "filter:topic.build", "method": "addUserToTopic" }
+		{ "hook": "filter:topic.build", "method": "addUserToTopic" },
+		{ "hook": "filter:widgets.getWidgets", "method": "defineWidgets" },
+		{ "hook": "filter:widget.render:commonCategories", "method": "renderCommonCategories" }
+
+
 	],
+	"templates": "./templates",
 	"scripts": [
 		"lib/persona.js",
 		"lib/modules/nprogress.js",

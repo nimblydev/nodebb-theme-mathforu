@@ -11,10 +11,10 @@
         <small class="topic-category"><a href="{config.relative_path}/category/{../category.slug}">[[global:posted_in, {../category.name}]]</a></small>
 
         <div class="post-info">
-            <a href="{config.relative_path}/user/{../user.userslug}">{buildAvatar(../user, "md", true, "user-img")}</a>
+            <a rel="nofollow" href="{config.relative_path}/user/{../user.userslug}">{buildAvatar(../user, "md", true, "user-img")}</a>
 
             <div class="post-author">
-                <a href="{config.relative_path}/user/{../user.userslug}">{../user.username}</a><br />
+                <a rel="nofollow" href="{config.relative_path}/user/{../user.userslug}">{../user.username}</a><br />
                 <span class="timeago" title="{../timestampISO}"></span>
             </div>
         </div>

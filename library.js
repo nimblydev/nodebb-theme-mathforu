@@ -1,20 +1,36 @@
 'use strict';
 
-var striptags = require('striptags');
-var meta = require.main.require('./src/meta');
-var user = require.main.require('./src/user');
+const nconf = require.main.require('nconf');
+const striptags = require('striptags');
+const meta = require.main.require('./src/meta');
+const user = require.main.require('./src/user');
+const categories = require.main.require('./src/categories');
 
 var library = {};
+let app;
 
-library.init = function(params, callback) {
-	var app = params.router;
-	var middleware = params.middleware;
+// library.init = function(params, callback) {
+//     app = params.router;
+// 	var middleware = params.middleware;
+
+// 	app.get('/admin/plugins/mathforu', middleware.admin.buildHeader, renderAdmin);
+// 	app.get('/api/admin/plugins/mathforu', renderAdmin);
+
+// 	callback();
+// };
+
+
+
+// const Widget = module.exports;
+
+library.init = async function (params) {
+	app = params.app;
+	const middleware = params.middleware;
 
 	app.get('/admin/plugins/mathforu', middleware.admin.buildHeader, renderAdmin);
 	app.get('/api/admin/plugins/mathforu', renderAdmin);
-
-	callback();
 };
+
 
 library.addAdminNavigation = function(header, callback) {
 	header.plugins.push({
@@ -85,6 +101,54 @@ library.defineWidgetAreas = function(areas, callback) {
 	]);
 
 	callback(null, areas);
+};
+
+library.defineWidgets = async function (widgets) {
+	console.log(`defineWidgets`);
+	const widgetData = [
+
+		{
+			widget: 'commonCategories',
+			name: 'Common Categories',
+			description: 'Lists the common categories on your forum',
+			content: 'admin/commonCategorieswidget',
+		},
+	];
+
+	// await Promise.all(widgetData.map(async function (widget) {
+	// 	widget.content = await app.renderAsync(widget.content, {});
+	// }));
+
+	widgets = widgets.concat(widgetData);
+	// const groupNames = await db.getSortedSetRevRange('groups:visible:createtime', 0, -1);
+	// let groupsData = await groups.getGroupsData(groupNames);
+	// groupsData = groupsData.filter(Boolean);
+	// groupsData.forEach(function (group) {
+	// 	group.name = validator.escape(String(group.name));
+	// });
+
+	// const html = await app.renderAsync('admin/groupposts', { groups: groupsData });
+	// widgets.push({
+	// 	widget: 'groupposts',
+	// 	name: 'Group Posts',
+	// 	description: 'Posts made my members of a group',
+	// 	content: html,
+	// });
+
+	return widgets;
+}
+
+library.renderCommonCategories = async function (widget) {
+	const data = await categories.getCategoriesByPrivilege('cid:0:children', widget.uid, 'find');
+	const excludeList = [110];
+	const expurgedData = data.filter(cat => !excludeList.includes(cat.cid));
+	console.log(expurgedData);
+	const categoriesHtmlContent = await app.renderAsync('widgets/categories', {
+		categories: expurgedData,
+		relative_path: nconf.get('relative_path'),
+	});
+	widget.html = `<div class="categories-list"> ${categoriesHtmlContent}</div>`
+	return widget;
 };
 
 library.getThemeConfig = function(config, callback) {
