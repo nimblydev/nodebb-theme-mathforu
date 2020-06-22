@@ -43,10 +43,10 @@
 		<li data-nid="{notifications.nid}" class="{notifications.readClass}" component="notifications/item">
 			<!-- IF notifications.image -->
 			<!-- IF notifications.from -->
-			<a class="pull-left" href="{config.relative_path}/user/{notifications.user.userslug}"><img class="user-img" src="{notifications.image}" /></a>
+			<a rel="nofollow" class="pull-left" href="{config.relative_path}/user/{notifications.user.userslug}"><img class="user-img" src="{notifications.image}" /></a>
 			<!-- ENDIF notifications.from -->
 			<!-- ELSE -->
-			<a class="pull-left" href="{config.relative_path}/user/{notifications.user.userslug}"><div class="pull-left user-icon user-img" style="background-color: {notifications.user.icon:bgColor};">{notifications.user.icon:text}</div></a>
+			<a rel="nofollow" class="pull-left" href="{config.relative_path}/user/{notifications.user.userslug}"><div class="pull-left user-icon user-img" style="background-color: {notifications.user.icon:bgColor};">{notifications.user.icon:text}</div></a>
 			<!-- ENDIF notifications.image -->
 
 			<p>

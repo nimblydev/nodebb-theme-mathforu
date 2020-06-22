@@ -5,7 +5,7 @@
 	<div class="col-sm-8 col-md-9">
 		<h2>
 			<div class="pull-right">
-				<a class="btn btn-link" href="{config.relative_path}/flags"><i class="fa fa-chevron-left"></i> [[flags:back]]</a>
+				<a rel="nofollow" class="btn btn-link" href="{config.relative_path}/flags"><i class="fa fa-chevron-left"></i> [[flags:back]]</a>
 			</div>
 			{target_readable}
 			<small><span class="timeago" title="{datetimeISO}"></span></small>
@@ -16,7 +16,7 @@
 		<!-- IF type_bool.post -->
 		<div class="media">
 			<div class="media-left">
-				<a href="{config.relative_path}/user/{target.user.userslug}">{buildAvatar(target.user, "lg", false, "media-object")}</a>
+				<a rel="nofollow" href="{config.relative_path}/user/{target.user.userslug}">{buildAvatar(target.user, "lg", false, "media-object")}</a>
 			</div>
 			<div class="media-body">
 				<h4 class="media-heading"><a href="{config.relative_path}/user/{target.user.userslug}">{target.user.username}</a></h4>
@@ -28,7 +28,7 @@
 		<!-- IF type_bool.user -->
 		<div class="media">
 			<div class="media-left">
-				<a href="{config.relative_path}/user/{target.userslug}">{buildAvatar(target, "lg", false, "media-object")}</a>
+				<a rel="nofollow" href="{config.relative_path}/user/{target.userslug}">{buildAvatar(target, "lg", false, "media-object")}</a>
 			</div>
 			<div class="media-body">
 				<h4 class="media-heading"><a href="{config.relative_path}/user/{target.userslug}">{target.username}</a></h4>
@@ -54,7 +54,7 @@
 							<label>[[flags:reporter]]</label>
 							<div>
 								{buildAvatar(reporter, "sm", false, "media-object")}
-								<a href="{config.relative_path}/user/{reporter.userslug}">{reporter.username}</a>
+								<a rel="nofollow" href="{config.relative_path}/user/{reporter.userslug}">{reporter.username}</a>
 							</div>
 						</div>
 						<div class="col-sm-6">
@@ -106,11 +106,11 @@
 					{{{each notes}}}
 					<div class="media">
 						<div class="media-left">
-							<a href="{config.relative_path}/user/{../user.userslug}">{buildAvatar(notes.user, "md", false, "media-object")}</a>
+							<a rel="nofollow" href="{config.relative_path}/user/{../user.userslug}">{buildAvatar(notes.user, "md", false, "media-object")}</a>
 						</div>
 						<div class="media-body">
 							<h4 class="media-heading">
-								<a href="{config.relative_path}/user/{../user.userslug}">{../user.username}</a>
+								<a rel="nofollow" href="{config.relative_path}/user/{../user.userslug}">{../user.username}</a>
 								<small><span class="timeago" title="{../datetimeISO}"></span></small>
 							</h4>
 							{../content}
@@ -149,11 +149,11 @@
 					{{{each history}}}
 					<div class="media">
 						<div class="media-left">
-							<a href="{config.relative_path}/user/{../user.userslug}">{buildAvatar(history.user, "md", false, "media-object")}</a>
+							<a rel="nofollow" href="{config.relative_path}/user/{../user.userslug}">{buildAvatar(history.user, "md", false, "media-object")}</a>
 						</div>
 						<div class="media-body">
 							<h4 class="media-heading">
-								<a href="{config.relative_path}/user/{../user.userslug}">{../user.username}</a>
+								<a rel="nofollow" href="{config.relative_path}/user/{../user.userslug}">{../user.username}</a>
 								<small><span class="timeago" title="{../datetimeISO}"></span></small>
 							</h4>
 							<ul>

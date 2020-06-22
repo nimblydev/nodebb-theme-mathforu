@@ -73,10 +73,10 @@
 					{{{each group.pending}}}
 					<tr data-uid="{group.pending.uid}">
 						<td>
-							<a href="{config.relative_path}/user/{group.pending.userslug}">{buildAvatar(group.pending, "sm", true)}</a>
+							<a rel="nofollow" href="{config.relative_path}/user/{group.pending.userslug}">{buildAvatar(group.pending, "sm", true)}</a>
 						</td>
 						<td class="member-name">
-							<a href="{config.relative_path}/user/{group.pending.userslug}">{group.pending.username}</a>
+							<a rel="nofollow" href="{config.relative_path}/user/{group.pending.userslug}">{group.pending.username}</a>
 						</td>
 						<td>
 							<div class="btn-group pull-right">
@@ -121,10 +121,10 @@
 					{{{each group.invited}}}
 					<tr data-uid="{group.invited.uid}">
 						<td>
-							<a href="{config.relative_path}/user/{group.invited.userslug}">{buildAvatar(group.invited, "sm", true)}</a>
+							<a rel="nofollow" href="{config.relative_path}/user/{group.invited.userslug}">{buildAvatar(group.invited, "sm", true)}</a>
 						</td>
 						<td class="member-name">
-							<a href="{config.relative_path}/user/{group.invited.userslug}">{group.invited.username}</a>
+							<a rel="nofollow" href="{config.relative_path}/user/{group.invited.userslug}">{group.invited.username}</a>
 						</td>
 						<td>
 							<div class="btn-group pull-right">

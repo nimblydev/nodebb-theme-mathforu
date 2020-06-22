@@ -8,7 +8,7 @@
 				<ul class="members">
 					{{{each groups.members}}}
 					<li>
-						<a href="{config.relative_path}/user/{groups.members.userslug}">{buildAvatar(groups.members, "sm", true)}</a>
+						<a rel="nofollow" href="{config.relative_path}/user/{groups.members.userslug}">{buildAvatar(groups.members, "sm", true)}</a>
 					</li>
 					{{{end}}}
 					<!-- IF groups.truncated -->
