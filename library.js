@@ -7,7 +7,11 @@ const user = require.main.require('./src/user');
 const categories = require.main.require('./src/categories');
 
 var library = {};
+const helpers = require('./lib/helpers');
+const util = require('util');
+
 let app;
+helpers.register();
 
 // library.init = function(params, callback) {
 //     app = params.router;

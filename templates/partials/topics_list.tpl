@@ -98,10 +98,10 @@
 				<!-- ELSE -->
 				<!-- IF topics.teaser.pid -->
 				<p>
-					<a rel="nofollow" href="{config.relative_path}/user/{topics.teaser.user.userslug}">{buildAvatar(topics.teaser.user, "24", true, "not-responsive")}</a>
-					<a rel="nofollow" class="permalink" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
+					<span class="atc" data-atc="{obfuscateUrl('/',config.relative_path,'/user/',topics.teaser.user.userslug)}">{buildAvatar(topics.teaser.user, "24", true, "not-responsive")}</span>
+					<span class="atc permalink" data-atc="{obfuscateUrl('/',config.relative_path,'/topic/',topics.slug,topics.teaser.index)}">
 						<span class="timeago" title="{topics.teaser.timestampISO}"></span>
-					</a>
+					</span>
 				</p>
 				<div class="post-content">
 					{topics.teaser.content}

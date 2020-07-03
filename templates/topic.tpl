@@ -21,9 +21,12 @@
 		<div component="topic/merged/message" class="alert alert-warning clearfix">
 			<span class="pull-left">[[topic:merged_message, {mergeIntoTid}, {merger.mergedIntoTitle}]]</span>
 			<span class="pull-right">
-				<a rel="nofollow" href="{config.relative_path}/user/{merger.userslug}">
+				<!--<a rel="nofollow" href="{config.relative_path}/user/{merger.userslug}">
 					<strong>{merger.username}</strong>
-				</a>
+				</a>-->
+				<span class="atc" data-atc="{obfuscateUrl('/', config.relative_path,'/user/', merger.userslug)}">
+					<strong>{merger.username}</strong>
+				</span>
 				<small class="timeago" title="{mergedTimestampISO}"></small>
 			</span>
 		</div>
