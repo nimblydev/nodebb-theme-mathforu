@@ -23,8 +23,6 @@ helpers.register();
 // 	callback();
 // };
 
-
-
 // const Widget = module.exports;
 
 library.init = async function (params) {
@@ -42,7 +40,6 @@ library.addAdminNavigation = function(header, callback) {
 		icon: 'fa-paint-brush',
 		name: 'Theme Mathforu'
 	});
-
 	callback(null, header);
 };
 
@@ -110,7 +107,6 @@ library.defineWidgetAreas = function(areas, callback) {
 library.defineWidgets = async function (widgets) {
 	console.log(`defineWidgets`);
 	const widgetData = [
-
 		{
 			widget: 'commonCategories',
 			name: 'Common Categories',
