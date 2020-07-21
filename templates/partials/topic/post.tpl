@@ -1,14 +1,21 @@
 <div class="clearfix post-header">
 	<div class="icon pull-left">
-		<a rel="nofollow" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+		<!--<a rel="nofollow" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 			{buildAvatar(posts.user, "46", true, "", "user/picture")}
 			<i component="user/status" class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
-		</a>
+		</a>-->
+
+		<span class="atc" data-atc="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+			{buildAvatar(posts.user, "46", true, "", "user/picture")}
+			<i component="user/status" class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
+		</span>
+
 	</div>
 
 	<small class="pull-left">
 		<strong>
-			<a rel="nofollow" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}</a>
+			<!--<a rel="nofollow" href="<!-- IF posts.user.userslug -->{obfuscateUrl("/",config.relative_path, "/user/", posts.user.userslug)}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}</a>-->
+			<span class="atc" data-atc="<!-- IF posts.user.userslug -->{obfuscateUrl("/",config.relative_path, "/user/", posts.user.userslug)}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}</span>
 		</strong>
 
 		<!-- IMPORT partials/topic/badge.tpl -->
@@ -18,7 +25,8 @@
 		<!-- ENDIF posts.user.banned -->
 
 		<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
-			<a rel="nofollow" class="permalink" href="{config.relative_path}/post/{posts.pid}"><span class="timeago" title="{posts.timestampISO}"></span></a>
+			<!--<a rel="nofollow" class="permalink" href="{obfuscateUrl("/",config.relative_path,"/post/", posts.pid)}"><span class="timeago" title="{posts.timestampISO}"></span></a>-->
+			<span class="atc permalink" data-atc="{obfuscateUrl("/",config.relative_path,"/post/", posts.pid)}"><span class="timeago" title="{posts.timestampISO}"></span></span>
 
 			<i component="post/edit-indicator" class="fa fa-pencil-square<!-- IF privileges.posts:history --> pointer<!-- END --> edit-icon <!-- IF !posts.editor.username -->hidden<!-- ENDIF !posts.editor.username -->"></i>
 

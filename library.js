@@ -7,7 +7,15 @@ const user = require.main.require('./src/user');
 const categories = require.main.require('./src/categories');
 
 var library = {};
+//const helpers = require('./lib/helpers');
+const util = require('util');
+
 let app;
+
+
+console.log(` customHelpers : ${util.inspect(helpers, false, null, true /* enable colors */)}`);
+
+helpers.register();
 
 // library.init = function(params, callback) {
 //     app = params.router;
@@ -18,8 +26,6 @@ let app;
 
 // 	callback();
 // };
-
-
 
 // const Widget = module.exports;
 
@@ -38,7 +44,6 @@ library.addAdminNavigation = function(header, callback) {
 		icon: 'fa-paint-brush',
 		name: 'Theme Mathforu'
 	});
-
 	callback(null, header);
 };
 
@@ -106,7 +111,6 @@ library.defineWidgetAreas = function(areas, callback) {
 library.defineWidgets = async function (widgets) {
 	console.log(`defineWidgets`);
 	const widgetData = [
-
 		{
 			widget: 'commonCategories',
 			name: 'Common Categories',
@@ -198,3 +202,4 @@ library.getLinkTags = function (data, callback) {
 };
 
 module.exports = library;
+
