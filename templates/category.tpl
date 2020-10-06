@@ -6,9 +6,6 @@
 </div>
 <div class="row">
 	<div class="category <!-- IF widgets.sidebar.length -->col-lg-9 col-sm-12<!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
-		<!-- IMPORT partials/category/subcategory.tpl -->
-
-		<!-- IF children.length --><hr class="hidden-xs"/><!-- ENDIF children.length -->
 
 		<div class="clearfix">
 			<!-- IF privileges.topics:create -->
@@ -29,7 +26,6 @@
 				<!-- IMPORT partials/category/tools.tpl -->
 			</span>
 		</div>
-
 		<hr class="hidden-xs" />
 
 		<h1 class="category-title" style="color: {bgColor}">Forum {name}</h1>
@@ -44,6 +40,14 @@
 		<!-- ENDIF !topics.length -->
 
 		<!-- IMPORT partials/topics_list.tpl -->
+
+	    <hr class="hidden-xs" />
+
+	    <!-- IMPORT partials/category/subcategory.tpl -->
+
+		<!-- IF children.length --><hr class="hidden-xs"/><!-- ENDIF children.length -->
+
+
 
 		<!-- IF config.usePagination -->
 			<!-- IMPORT partials/paginator.tpl -->
