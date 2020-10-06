@@ -1,15 +1,15 @@
 {
 	"id": "nodebb-theme-mathforu",
-	"library": "library.js",
+	"library": "./lib/theme.js",
 	"hooks": [
+		{ "hook": "filter:widget.render:commonCategories", "method": "renderCommonCategories" },
 		{ "hook": "filter:teasers.get", "method": "getTeasers" },
 		{ "hook": "filter:widgets.getAreas", "method": "defineWidgetAreas" },
 		{ "hook": "filter:config.get", "method": "getThemeConfig" },
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
 		{ "hook": "filter:topic.build", "method": "addUserToTopic" },
-		{ "hook": "filter:widgets.getWidgets", "method": "defineWidgets" },
-		{ "hook": "filter:widget.render:commonCategories", "method": "renderCommonCategories" }
+		{ "hook": "filter:widgets.getWidgets", "method": "defineWidgets" }
 
 
 	],
@@ -17,10 +17,11 @@
 	"scripts": [
 		"lib/client.js",
 		"lib/helpers.js",
-		"lib/persona.js",
-		"lib/modules/nprogress.js",
-		"lib/modules/autohidingnavbar.min.js",
-		"lib/modules/quickreply.js"
+		"../nodebb-theme-persona/lib/persona.js",
+		"../nodebb-theme-persona/lib/modules/nprogress.js",
+		"../nodebb-theme-persona/lib/modules/autohidingnavbar.min.js",
+		"../nodebb-theme-persona/lib/modules/quickreply.js",
+		"lib/pagination.js"
 	],
 	"modules": {
 		"pulling.js": "node_modules/pulling/build/pulling-drawer.js"
